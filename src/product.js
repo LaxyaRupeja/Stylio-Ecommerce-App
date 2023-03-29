@@ -1,3 +1,4 @@
+let orderData = JSON.parse(localStorage.getItem("Allcartproduct")) || []
 function fetchData(url) {
     fetch(url)
         .then((res) => res.json())
@@ -10,6 +11,7 @@ let cardlist = document.querySelector(".cardList")
 window.addEventListener('load', () => {
     fetchData("https://stylio.onrender.com/products")
 })
+
 let catDiv = document.querySelectorAll('.optionsCat > div');
 let priceDiv = document.querySelectorAll('.price > div');
 let brandDiv = document.querySelectorAll('.Brand > div');
@@ -110,15 +112,18 @@ for (let i = 0; i < menu_options.length; i++) {
 flycontainer.addEventListener("mouseenter", displayNavContainer);
 flycontainer.addEventListener("mouseleave", hideNavContainer);
 
-function createCard(imgUrl, brandName, titleD, afterDis, price, discount) {
+function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, cat, gende) {
     let card = document.createElement('div');
     card.setAttribute('class', "card");
+    let bags = document.createElement('div');
+    bags.setAttribute('id', "bag");
+    let icon = document.createElement('i');
+    icon.setAttribute("class", "fa-solid fa-bag-shopping");
+    bags.append(icon)
+
     card.innerHTML = `
     <div class="rela">
     <img src=${imgUrl} alt="error">
-    </div>
-    <div id="bag">
-    <i class="fa-solid fa-bag-shopping"></i>
     </div>
     <div id="wish">
     <i class="fa-regular fa-heart"></i>
@@ -131,6 +136,21 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount) {
       <p id="strip">₹${price}</p>
       <p class="dis">(${discount}% off)</p>
     </div>`
+    icon.addEventListener("click", () => {
+        let obj = {
+            id: id,
+            img: imgUrl,
+            brand: brandName,
+            price: price,
+            gender: gende,
+            category: cat,
+            title: titleD,
+            discount: discount
+        }
+        orderData.push(obj);
+        localStorage.setItem('Allcartproduct', JSON.stringify(orderData))
+    })
+    card.append(bags)
     return card
 }
 function appendToDom(arr) {
@@ -138,10 +158,11 @@ function appendToDom(arr) {
     arr.forEach(el => {
         let disprice = el.price - (el.price * (el.discount / 100))
         disprice = disprice.toFixed(1)
-        cardlist.append(createCard(el.img, el.brand, el.title, disprice, el.price, el.discount))
+        cardlist.append(createCard(el.img, el.brand, el.title, disprice, el.price, el.discount, el.id, el.category, el.gender))
 
     });
 }
+let addTocart = document.getElementById('addtocart');
 let sort = document.getElementById('sortbyprice');
 sort.addEventListener('change', () => {
     if (sort.value == "") {

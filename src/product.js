@@ -1,0 +1,150 @@
+function fetchData(url) {
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            appendToDom(data)
+        })
+        .catch((err) => console.log(err))
+}
+let cardlist = document.querySelector(".cardList")
+window.addEventListener('load', () => {
+    fetchData("https://stylio.onrender.com/products")
+})
+let catDiv = document.querySelectorAll('.optionsCat > div');
+let priceDiv = document.querySelectorAll('.price > div');
+let brandDiv = document.querySelectorAll('.Brand > div');
+let sizeDiv = document.querySelectorAll('.Size > div');
+let cath3 = document.querySelector('.optionsCat > h3 > i')
+let prich3 = document.querySelector('.price > h3 > i')
+let brandh3 = document.querySelector('.Brand > h3 > i')
+let Sizeh3 = document.querySelector('.Size > h3 > i')
+console.log(catDiv)
+document.getElementById('cate').addEventListener('click', () => {
+    if (cath3.getAttribute("class") == "fa-solid fa-minus") {
+        cath3.removeAttribute("class");
+        cath3.setAttribute("class", "fa-solid fa-plus")
+    }
+    else {
+        cath3.removeAttribute("class");
+        cath3.setAttribute("class", "fa-solid fa-minus")
+    }
+    catDiv.forEach(el => {
+        if (el.style.display == "none") {
+            el.style.display = "flex"
+        }
+        else {
+            el.style.display = "none"
+        }
+    });
+})
+document.getElementById('bran').addEventListener('click', () => {
+    if (brandh3.getAttribute("class") == "fa-solid fa-minus") {
+        brandh3.removeAttribute("class");
+        brandh3.setAttribute("class", "fa-solid fa-plus")
+    }
+    else {
+        brandh3.removeAttribute("class");
+        brandh3.setAttribute("class", "fa-solid fa-minus")
+    }
+    brandDiv.forEach(el => {
+        if (el.style.display == "none") {
+            el.style.display = "flex"
+        }
+        else {
+            el.style.display = "none"
+        }
+    });
+})
+document.getElementById('priceSS').addEventListener('click', () => {
+    if (prich3.getAttribute("class") == "fa-solid fa-minus") {
+        prich3.removeAttribute("class");
+        prich3.setAttribute("class", "fa-solid fa-plus")
+    }
+    else {
+        prich3.removeAttribute("class");
+        prich3.setAttribute("class", "fa-solid fa-minus")
+    }
+    priceDiv.forEach(el => {
+        if (el.style.display == "none") {
+            el.style.display = "flex"
+        }
+        else {
+            el.style.display = "none"
+        }
+    });
+})
+document.getElementById('fitsize').addEventListener('click', () => {
+    if (Sizeh3.getAttribute("class") == "fa-solid fa-minus") {
+        Sizeh3.removeAttribute("class");
+        Sizeh3.setAttribute("class", "fa-solid fa-plus")
+    }
+    else {
+        Sizeh3.removeAttribute("class");
+        Sizeh3.setAttribute("class", "fa-solid fa-minus")
+    }
+    sizeDiv.forEach(el => {
+        if (el.style.display == "none") {
+            el.style.display = "flex"
+        }
+        else {
+            el.style.display = "none"
+        }
+    });
+})
+
+let mask = document.getElementById("layer_mask");
+let flycontainer = document.getElementById("dropdown_container");
+function displayNavContainer() {
+    mask.style.visibility = "visible";
+    flycontainer.style.visibility = "visible";
+}
+function hideNavContainer() {
+    mask.style.visibility = "hidden";
+    flycontainer.style.visibility = "hidden";
+}
+let menu_options = document.getElementsByClassName("one");
+for (let i = 0; i < menu_options.length; i++) {
+    menu_options[i].addEventListener("mouseenter", displayNavContainer);
+    menu_options[i].addEventListener("mouseleave", hideNavContainer);
+}
+flycontainer.addEventListener("mouseenter", displayNavContainer);
+flycontainer.addEventListener("mouseleave", hideNavContainer);
+
+function createCard(imgUrl, brandName, titleD, afterDis, price, discount) {
+    let card = document.createElement('div');
+    card.setAttribute('class', "card");
+    card.innerHTML = `
+    <div class="rela">
+    <img src=${imgUrl} alt="error">
+    </div>
+    <div id="bag">
+    <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+    <div id="wish">
+    <i class="fa-regular fa-heart"></i>
+    </div>
+    
+    <h3 id="golden">${brandName}</h3>
+    <h3 id="nameP">${titleD}</h3>
+    <div class="amount">
+      <p>₹${afterDis}</p>
+      <p id="strip">₹${price}</p>
+      <p class="dis">(${discount}% off)</p>
+    </div>`
+    return card
+}
+function appendToDom(arr) {
+    cardlist.innerHTML = null;
+    arr.forEach(el => {
+        let disprice = el.price - (el.price * (el.discount / 100))
+        disprice = disprice.toFixed(1)
+        cardlist.append(createCard(el.img, el.brand, el.title, disprice, el.price, el.discount))
+
+    });
+}
+let sort = document.getElementById('sortbyprice');
+sort.addEventListener('change', () => {
+    if (sort.value == "") {
+        fetchData()
+    }
+})

@@ -104,8 +104,8 @@
 }
 #subnavbar > div:nth-child(2) > div:nth-child(2) {
     position: absolute;
-    right: 20%;
-    top: 48px;
+    right: 20.8%;
+    top: 46px;
     color:#2F4254;
 }
 #subnavbar > div:nth-child(2) > div:nth-child(1) > input {
@@ -229,3 +229,4 @@
         display:none;
     }
 }
+

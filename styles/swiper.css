@@ -1,0 +1,50 @@
+
+.Slider {
+    margin-top: 4%;
+}
+
+.swiper {
+  width: 100%;
+  position: static;
+}
+
+.swiper-wrapper {
+    margin-bottom: 42px;
+    margin-top: 20px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  
+}
+.swiper mySwiper2 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 0;
+}
+.horizontal-banner img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 15px;
+}
+.swiper-slide img {
+    transition: transform .6s ease-in;
+    will-change: transform;
+}
+.big-banner img{
+    width: 100%;
+    object-fit: cover;
+    margin-top: 0px; 
+}

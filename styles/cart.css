@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -31,7 +32,7 @@
     box-sizing: border-box;
     text-align: center;
     color: #333;
-    transition: 0.2s;
+    transition: all 0.5s ease-in;
     font-size: 15px;
     font-weight: 400;
 }
@@ -104,8 +105,8 @@
 }
 #subnavbar > div:nth-child(2) > div:nth-child(2) {
     position: absolute;
-    right: 20.8%;
-    top: 46px;
+    right: 20%;
+    top: 48px;
     color:#2F4254;
 }
 #subnavbar > div:nth-child(2) > div:nth-child(1) > input {
@@ -228,5 +229,123 @@
     #subnavbar {
         display:none;
     }
+}
+
+
+
+/* mid section */
+.reliance_img {
+    width: 80%;
+    /* height: 200px; */
+    /* border:1px solid red; */
+    margin: auto;
+    margin-bottom: 20px;
+}
+.reliance_img img {
+    width: 100%;
+    /* height: 200px; */
+}
+#bagID{
+    margin-left: 150px;
+}
+#product_main_container {
+    border: 1px solid blue;
+    /* height: 300px; */
+    display:flex;
+    width:80%;
+    margin: auto;
+    padding: 30px;
+    }
+.detail_left {
+    /* border: 1px solid red; */
+    width: 100%;
+    }
+.detail_left img{
+    width:26%;
+    /* border: 1px solid red; */
+}
+h4 {
+text-align: center;
+margin-top:-4%;
+color:#5a5a55;
+margin-left: 20%;
+}
+h3 {
+    margin-top:2%;
+}
+.detail_left div {
+    border: 1px solid rgb(211, 153, 153);
+    width: 50%;
+    justify-content: space-around;
+    text-align:right;
+    height:20px;
+    margin-top: -4%;
+    font-size:18px;
+}
+
+.product_right_container {
+    /* border: 1px solid rgb(110, 110, 6); */
+    width:30%;
+    margin-left:20%;
+    }    
+.orderdetails {
+        font-size:23px;
+        font-weight:bold;
+    }
+#bag {
+    display: flex;
+    justify-content:space-between;
+}
+.bag_total {
+    color: rgb(88, 84, 84);
+    font-size:20px;
+}
+.bag_total_price {
+    font-size:20px;
+    margin-top: -5%;
+}
+.deliv {
+    color: rgb(88, 84, 84);
+    font-size:20px;
+    margin-top: -2%;
+}
+.total {
+    font-size:20px;
+    margin-top: 6%;
+}
+.totalamount {
+    font-size:20px;
+}
+
+.shipping_btn {
+    width:100%;
+    height:50px;
+    margin: auto;
+    background-color: #D5A249;
+    border: 1px solid #D5A249;
+    color:white;
+    letter-spacing:2px;
+    cursor: pointer;
+}
+.shipping_btn:hover{
+  outline: 1px solid;
+  border: 3px solid #5a5a55;
+  transition: all 0.3s ease-in-out;
+}
+
+.bottom_icons {
+    display: flex;
+    width: 70%;
+    margin-top: 1%;
+    margin-left: 23%;
+    /* border: 3px solid #5a5a55; */
+}
+.exchange_icons {
+    /* border:1px solid red; */
+    width: 100%;
+    margin: auto;
+}
+.exchange_icons img {
+    width:20%;
 }
 

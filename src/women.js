@@ -151,20 +151,17 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, ca
         localStorage.setItem('Allcartproduct', JSON.stringify(orderData))
     })
     card.append(bags)
-    card.addEventListener('click', () => {
-        localStorage.setItem('product', id)
-        window.location.href = 'individual.html'
-    })
     return card
 }
 function appendToDom(arr) {
     cardlist.innerHTML = null;
     arr.forEach(el => {
-        if (el.gender == "Male") {
+        if (el.gender == "Female") {
             let disprice = el.price - (el.price * (el.discount / 100))
             disprice = disprice.toFixed(1)
             cardlist.append(createCard(el.img, el.brand, el.title, disprice, el.price, el.discount, el.id, el.category, el.gender))
         }
+
     });
 }
 let addTocart = document.getElementById('addtocart');
@@ -183,4 +180,3 @@ sort.addEventListener('change', () => {
 
     }
 })
-

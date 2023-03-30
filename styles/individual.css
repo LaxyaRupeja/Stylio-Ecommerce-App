@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+}
+main{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.productdetails{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.imagediv > img{
+  width: 100%;
+  object-fit: cover;
+}
+.offer{
+    width: 350px;
+}
+.offer > p{
+    text-align: center;
+}
+span{
+    text-decoration-line: line-through;
+}
+#priice{
+    font-size: 26px;
+}
+.offer > div{
+    display: flex;
+    /* border: 1px solid black; */
+    /* flex-direction: column; */
+}
+.offer > div > div{ 
+    border: 1px solid brown
+}
+.selectcolo >div{
+    display: flex;
+    gap: 20px
+    ;
+}
+.red,.blue,.yellow{
+    /* background-color: rgb(204, 0, 0); */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.red{
+    background-color: #f08585;
+}
+.yellow{
+    background-color: #9fccad;
+}
+.blue{
+    background-color: #415d85;
+}
+.selectsize > div{
+    display: flex;
+    gap: 20px;
+    
+}
+.selectsize{
+    text-align: center;
+}
+.selectsize > div > div{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+
+
+}

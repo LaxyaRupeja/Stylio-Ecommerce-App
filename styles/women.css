@@ -400,9 +400,3 @@ gap: 20px;
 h3{
     /* pointer-events: none; */
 }
-#sortbyprice{
-    width: 200px;
-    height: 40px;
-    font-size: 17px;
-    padding: 0 10px;
-}

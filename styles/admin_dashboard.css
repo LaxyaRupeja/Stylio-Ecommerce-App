@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    border: 1px solid red;
+    height: 10vh;
+    align-items: center;
+     box-shadow: 0px 0px 5px #9a9a9a;
+
+}
+#nav_div1{
+    width: 20%;
+    height: 6vh;
+     border: 1px solid red;
+     margin-left: 4%;
+    
+}
+#nav_div1>img{
+    width: 100%;
+    height: 100%;
+     border-radius: 8px;
+     
+}
+#nav_div2{
+    display: flex;
+    margin-right: 2%;
+    justify-content: space-between;
+    align-items: center;
+   
+    border: 1px solid black;
+    
+    width: 8%;
+}
+#aniket_nav{
+    width: 30%;
+    height: 5vh;  
+
+}
+#aniket_nav>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    margin-left: 1%;
+}
+
+#background{
+    display: flex;
+    border: 1px solid blue;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 5vh;
+}
+#black ,#white{
+   width: 3%;
+   height: 3vh;
+   margin-left: 4%;
+}
+#black>img,#white>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+#aniket_dashboard{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    border: 1px solid black;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#all{
+    width: 30%;
+    border: 1px solid red;
+    border-radius: 10px 0px 0px 10px;
+    background-color: rgb(49, 23, 35);
+}
+.crud{
+    display: flex;
+    align-items: center;
+    border: 1px solid purple;
+  
+    margin-top: 4%;
+    height: 7vh;
+    padding: 2%;
+    border-radius: 10px 0px 0px 10px;
+    color: #FFFFFF;
+}
+.crud>div{
+    width: 20%;
+    height: 100%;
+    margin-right: 3%;
+   
+}
+.crud>div>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    
+}
+
+.crud:hover{
+   background-color: #9a9a9a;
+}
+#aniket_product{
+    width: 100%;
+}
+
+#data{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+#data>div{
+    border: 1px solid black;
+    text-align: center;
+    width: 20%;
+    height: 8vh;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #9a9a9a;
+    background-color: rgb(49, 23, 35);
+    color: #FFFFFF;
+    margin: 1% 0% 1% 0%;
+
+}
+#data>div:hover{
+    background-color: #9a9a9a;
+    color: black;
+
+}
+
+#aniket_product{
+    border: 2px solid rgb(28, 19, 199);
+}
+.Allproduct{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10%;
+}
+.Allproduct>div{
+    width: 10%;
+    height: 8vh;
+}
+.Allproduct>div>img{
+    width: 100%;
+    height: 100%;
+}
+#product{
+    border: 1px solid rgb(219, 205, 205);
+    height: 50vh;
+}

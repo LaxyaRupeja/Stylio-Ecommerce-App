@@ -1,7 +1,7 @@
 
 *{
     margin: 0;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
 }
 #logo {
     cursor: pointer;
@@ -247,46 +247,124 @@
 }
 #bagID{
     margin-left: 150px;
+    color: #2F4254;
+}
+#bagID span{
+    color: gray;
 }
 #product_main_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     /* height: 300px; */
     display:flex;
     width:80%;
     margin: auto;
     padding: 30px;
     }
-.detail_left {
-    /* border: 1px solid red; */
-    width: 100%;
-    }
-.detail_left img{
-    width:26%;
-    /* border: 1px solid red; */
-}
-h4 {
-text-align: center;
-margin-top:-4%;
-color:#5a5a55;
-margin-left: 20%;
-}
-h3 {
-    margin-top:2%;
-}
-.detail_left div {
-    border: 1px solid rgb(211, 153, 153);
-    width: 50%;
-    justify-content: space-around;
-    text-align:right;
-    height:20px;
-    margin-top: -4%;
-    font-size:18px;
-}
 
+/* ******************************************************* */
+
+
+.product_left_container{
+    /* border: 1px solid red; */
+    /* width: 100%; */
+}
+.product_left_container > div{
+    /* border: 1px solid gray; */
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 5px;
+}
+#imgDetails{
+    /* border: 3px solid yellow; */
+    width: 30%;
+    margin-right: 20px;
+}
+#imgDetails img{
+    width: 100%;
+}
+#otherDetails{
+    /* border: 1px solid yellow; */
+    width: 60%;
+    padding-left: 20px;
+    
+}
+#otherDetails > h4{
+    color:#5a5a55;
+    margin-top:20px;
+    /* border: 1px solid black; */
+}
+#otherDetails > h3{
+    /* color:#5a5a55; */
+    margin-top:20px;
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+#selectSize{
+    /* margin-top: 10px; */
+    width: 50px;
+    /* display: block; */
+}
+#selectSize:hover{
+    cursor: pointer;
+}
+.label2Class{
+    margin-top: 20px;
+}
+#increaseBtn{
+    /* display: block; */
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+    margin-right: 170px;
+}
+#increaseBtn:hover{
+    cursor: pointer;
+}
+#decreaseBtn{
+    /* display: block; */
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid gray;
+}
+#decreaseBtn:hover{
+    cursor: pointer;
+}
+/* #saving{ */
+    /* line-height: 0%; */
+    /* display: inline; */
+    /* margin-bottom: 20px; */
+    /* padding: 20px; */
+/* } */
+/* .label3Class{ */
+    /* margin-bottom: 20px; */
+    /* padding: 20px; */
+/* } */
+#deleteBtn{
+    width: 100px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #2F4254;
+    padding: 5px 10px;
+    border: 1px solid #2F4254;
+    border-radius: 2px;
+}
+#deleteBtn:hover{
+    cursor: pointer;
+    background-color: rgb(152, 14, 14);
+}
+/* ************************************************************* */
 .product_right_container {
     /* border: 1px solid rgb(110, 110, 6); */
-    width:30%;
-    margin-left:20%;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    width:50%;
+    height: 250px;
+    margin-left:50px;
+    padding: 10px;
+    background-color: #fafafa;
     }    
 .orderdetails {
         font-size:23px;
@@ -302,7 +380,7 @@ h3 {
 }
 .bag_total_price {
     font-size:20px;
-    margin-top: -5%;
+    /* margin-top: -5%; */
 }
 .deliv {
     color: rgb(88, 84, 84);
@@ -311,7 +389,7 @@ h3 {
 }
 .total {
     font-size:20px;
-    margin-top: 6%;
+    /* margin-top: 6%; */
 }
 .totalamount {
     font-size:20px;
@@ -349,3 +427,5 @@ h3 {
     width:20%;
 }
 
+
+/* bar section  */

@@ -147,8 +147,16 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, ca
             title: titleD,
             discount: discount
         }
-        orderData.push(obj);
-        localStorage.setItem('Allcartproduct', JSON.stringify(orderData))
+        // orderData.push({...obj,quantity:1});
+        if(checkDuplicate(obj)){
+          alert("Product Already in Cart");
+        }
+        else{
+            orderData.push({...obj, quantity:1});
+            localStorage.setItem('Allcartproduct', JSON.stringify(orderData));
+            alert("Product Added To Cart");
+        }
+        
     })
     card.append(bags)
     card.addEventListener('click', () => {
@@ -173,7 +181,7 @@ sort.addEventListener('change', () => {
     if (sort.value == "") {
         fetchData("https://stylio.onrender.com/products")
     }
-    else {
+        else {
         if (sort.value == "a-z") {
             fetchData("https://stylio.onrender.com/products?_sort=price&_order=asc");
         }
@@ -182,5 +190,15 @@ sort.addEventListener('change', () => {
         }
 
     }
+    
 })
 
+
+function checkDuplicate(element){
+    for(let i=0; i<orderData.length; i++){
+      if(orderData[i].id==element.id){
+        return true;
+      }      
+    }
+    return false;
+  }

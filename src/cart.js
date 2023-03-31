@@ -133,10 +133,10 @@ var finalprice = finalcart.reduce(function(acc, cv) {
 
 
 var bagtotal = document.createElement("p");
-bagtotal.textContent = "₹" + finalprice;
+bagtotal.textContent = "Rs." + finalprice;
 
 var totalamount = document.createElement("p");
-totalamount.textContent = "₹" + finalprice;
+totalamount.textContent = "Rs." + finalprice;
 
 document.querySelector(".bag_total_price").append(bagtotal);
 document.querySelector(".totalamount").append(totalamount);
@@ -145,86 +145,3 @@ document.querySelector(".totalamount").append(totalamount);
 
 
 
- 
-// let totalEle = document.getElementById("cart-total");
-// let sum = 0;
-// for(let i=0; i<cart.length; i++){
-//   sum+= cart[i].price*cart[i].quantity;
-// }
-
-// totalEle.innerText=sum;
-
-// let quantityEle = document.createElement("span");
-// quantityEle.innerText=element.quantity;
-
-// divEle.append(imgEle,brandEle,priceEle,detailEle,categoryEle,increaseEle,quantityEle,decreaseEle,removeEle);
-// cartContainer.append(divEle);
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// selectSize.innerHTML=`<option>XS</option><option>S</option select><option>M</option><option>L</option><option>XL</option><option>XXL</option>`;
-
-
-// let quantityEle = document.createElement("span");
-// quantityEle.innerText=element.quantity;
-
-// let increaseEle = document.createElement("button");
-// increaseEle.innerText="+";
-// increaseEle.setAttribute("id","increaseBtn")
-// increaseEle.addEventListener("click",()=>{
-//     element = element.quantity++;
-//     localStorage.setItem("BagListObj",JSON.stringify(cartarr));
-//     displayData(cartarr);
-// });
-// let decreaseEle = document.createElement("button");
-// decreaseEle.innerText="-";
-// decreaseEle.setAttribute("id","decreaseBtn")
-// decreaseEle.addEventListener("click",()=>{
-//     if(element.quantity>1){
-//         element = element.quantity--;
-//         localStorage.setItem("BagListObj",JSON.stringify(cartarr));
-//         displayData(cartarr);
-// }
-
-// let RemoveDiv = document.createElement("div");
-//             RemoveDiv.setAttribute("id","RemoveDiv");
-
-//             let removeEle = document.createElement("button");
-//             removeEle.innerText="Remove";
-//             removeEle.addEventListener("click",()=>{
-//                 cartarr = cartarr.filter(function(ele){
-//                     return ele.id !== element.id;
-//                     })
-//                     localStorage.setItem("BagListObj",JSON.stringify(cartarr));
-//                     displayData(cartarr);
-//             });

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>address page</title>
+    <link rel="stylesheet" href="./styles/address1.css">
+    <link rel="stylesheet" href="./styles/address2.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <div class="signin-customer-care">
+                <ul>
+                    <li>
+                        <a href="#" id="username"></a>
+                    </li>
+                    <li onclick="showBox()">
+                        <p id="signin">Sign In / Join AJIO</p>
+                    </li>
+                    <li onclick="signOut()">
+                        <p id="signout">Sign Out</p>
+                    </li>
+                    <li>
+                        <a href="#">Customer Care</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logo-box">
+                <a href="index.html">
+                    <img  class="logo-img" src="./images/logo.png" alt="">
+                </a>
+                <div class="nav">
+                    <img src="./images/second.PNG" alt="">
+                </div>
+
+            </div>
+
+            <!-- <div class="nav">
+                <img src="./images/two.PNG" alt="">
+            </div> -->
+        </header>
+    </div>
+
+    <!--------------SignIn box start ---------->
+    <!-- <div class="sign-in-container">
+        <div class="sign-in-box">
+
+            <div onclick="hideBox()" class="close">X</div>
+
+
+            <h2 class="box-heading top">Welocome to AJIO</h2>
+            <h3 class="box-heading join">Join/Sign In using</h3>
+            <div class="link-box">
+                <div class="fb"><img src="images/signInBox/fb.jpg" alt=""> Facebook</div>
+                <div class="google"><img src="images/signInBox/google.jpg" alt=""> Google</div>
+            </div>
+            <div class="or">Or</div>
+            <div class="line left"></div>
+            <div class="line right"></div>
+            <h3 class="box-heading small" id="inputHeading">Enter Mobile Number*</h3>
+
+            <p id="warning"></p>
+            <input type="text" id="number"><br>
+            <div class="hide input-container" id="inputCont">
+                <div class="radioBox" id="radioBox">Gender:
+                    <label>
+                        <input type="radio" name="radio-button" value="no" />
+                        <span>Female</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="radio-button" value="no" />
+                        <span>Male</span>
+                    </label>
+                </div>
+                <input type="text" id="name" placeholder="Name"><br>
+                <input type="text" id="email" placeholder="Email"><br>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button onclick="goToSignUP()" class="continue" id="continueBtn">CONTINUE</button>
+            <h3 class="box-heading lite">By Signing in, I agree to <span class="blue-span">Term and Conditions.</span>
+            </h3>
+        </div>
+    </div> -->
+    <!--------------SignIn box end ------------>
+    <!-- main body container starts -->
+
+    <div class="main-container">
+        <div class="del-address">
+            <div class="address-show">
+                <img src="./images/placeholder.png" alt="error">
+                <div>
+                    <div>Delivery Address</div>
+                    <div>We will deliver your order to this address</div>
+                </div>
+            </div>
+            <div id="new_address"></div>
+            <button id="add-new-address">Add New Address</button>
+        </div>
+        <div class="total-bill">
+            <div class="bill">
+                <div>Order Details</div>
+                <div class="bag-total bill-card">
+                    <div>Bag Total</div>
+                    <div id="bag-item-amount"></div>
+                </div>
+                <div class="bag-delivery bill-card">
+                    <div>Delivery</div>
+                    <div id="bag-delivery-amount">FREE</div>
+                </div>
+                <div class="bag-total bill-card">
+                    <div>Total Amount</div>
+                    <div id="bag-total-amount"></div>
+                </div>
+                <button onclick="goToPayment()" id="proceed-to-ship">PROCEED TO PAYMENT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- main body container ends -->
+
+    <!-- Address add/update pop up starts -->
+
+    <div class="change_address">
+        <div class="container">
+            <h1 id="close">+</h1>
+            <h3>Add new address</h3>
+            <form>
+                <div class="inputbox">
+                    <input id="input1" type="text" autocomplete="no" placeholder="Name*">
+                </div>
+                <div class="inputbox">
+                    <input id="input2" type="number" value="" placeholder="Mobile*">
+                </div>
+                <div class="inputbox">
+                    <input id="input3" type="text" value="" placeholder="Pincode*">
+                </div>
+                <div class="inputbox">
+                    <input id="input4" type="text" placeholder="Locality / Area / Street*">
+                </div>
+                <div class="inputbox">
+                    <input id="input5" type="text" placeholder="Flat Number / Building Name*">
+                </div>
+                <div class="inputbox">
+                    <input id="input6" type="text" placeholder="Landmark">
+                </div>
+                <div class="inputbox">
+                    <input id="input7" type="text" placeholder="District / City*">
+                </div>
+                <div class="inputbox">
+                    <input id="input8" type="text" placeholder="State*">
+                </div>
+                <div>
+                    <h4>Address Type</h4>
+                    <div>
+                        <input type="radio"> Home
+                        <input type="radio"> Work
+                        <input type="radio"> Others
+                    </div>
+                    <div>
+                        <input type="checkbox"> Make as default Address
+                    </div>
+                </div>
+            </form>
+            <div>
+                <button id="button">Add</button>
+                <button onclick="closePage()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address add/update pop up ends -->
+    <footer>
+        <div class="bottom-bar">
+            <div class="bottom-bar-info">
+                <img src="images/cart_images/secure-payment.png" alt="">
+                <div>SECURE PAYMENTS</div>
+            </div>
+            <div class="bottom-bar-info">
+                <img src="images/cart_images/rupee.png" alt="">
+                <div>CASH ON DELIVERY</div>
+            </div>
+            <div class="bottom-bar-info">
+                <img src="images/cart_images/quality.png" alt="">
+                <div>ASSURED QUALITY</div>
+            </div>
+            <div class="bottom-bar-info">
+                <img src="images/cart_images/return.png" alt="">
+                <div>EASY RETURNS</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
+<script src="./src/address.js">
+    
+</script>

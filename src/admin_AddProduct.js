@@ -5,6 +5,7 @@ let white=document.querySelector("#white");
 let body=document.querySelector("body");
 let nav=document.querySelector("nav");
 let allpro=document.querySelector("#product");
+let form=document.querySelector("#form");
 
 
 black.addEventListener("click",()=>{
@@ -13,6 +14,8 @@ black.addEventListener("click",()=>{
     nav.style.color="#FFFFFF";
     product.style.color="#FFFFFF";
     pagination.style.color="#FFFFFF"
+    form.style.color="#FFFFFF"
+
     
 })
 
@@ -22,14 +25,35 @@ white.addEventListener("click",()=>{
     nav.style.color="Black";
     pagination.style.color="Black";
     allpro.style.color="Black";
+    form.style.color="Black"
 })
+
+// form
+let button=document.querySelector("button");
+let addform=document.querySelector("#form");
+let img=document.querySelector("#img");
+
+button.addEventListener("click",()=>{
+    addform.style.display="grid"
+    product.style.display="none";
+    pagination.style.display="none";
+})
+img.addEventListener("click",()=>{
+    addform.style.display="none"
+    product.style.display="grid";
+    pagination.style.display="flex";
+
+})
+
+
 
 // data fetch product and detail  
 
-let Totalproduct=document.querySelector(".data-1");
-let TotalCustomer=document.querySelector(".data-2");
+
 let product=document.getElementById("product");
 let pagination=document.querySelector("#pagination");
+
+
 
 
 
@@ -46,7 +70,7 @@ function fetchrender(page){
     }).then((res)=>{
         // console.log(`X-Total-Count`);
         let count=res.headers.get("X-Total-Count");
-        Totalproduct.innerText=count;
+       
         let buttton=Math.ceil(count/8);
         // console.log(buttton);
         pagination.innerHTML=null;
@@ -54,15 +78,14 @@ function fetchrender(page){
             pagination.append(allbutton(i));
 
         }
-        // console.log(count);
         return res.json();
         
     }).then((data)=>{
-        // console.log(data);
+       console.log(data)
        
         product.innerHTML=null;
         let productdispay=getall(data);
-        
+    
     }).catch((err)=>{
         console.log(err);
     })
@@ -110,6 +133,51 @@ function allbutton(i){
       return div;
    }
 
+//    add product in 
+   let detarils=document.querySelector("form");
+   
+
+   detarils.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    
+    let obj={
+        title:detarils.name.value,
+        brand:detarils.brand.value,
+        category:detarils.category.value,
+        img:detarils.Image.value,
+        price:detarils.price.value,
+        discount:detarils.discount.value,
+        gender:detarils.gender.value
+    }
+       console.log(obj);
+
+     fetch(`https://stylio.onrender.com/products`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body:JSON.stringify(obj),
+     }).then((res)=>{
+        return res.json();
+     }).then((data)=>{
+        console.log(data);
+     }).catch((err)=>{
+        console.log(err);
+     })
+
+
+
+
+
+     Swal.fire(
+        'Product is add!',
+        'You clicked the button!',
+        'success'
+      );
+
+   
+   
+   })
 
 
 
@@ -117,15 +185,3 @@ function allbutton(i){
 
 
 
-// fetch userdetails
-fetch(`https://stylio.onrender.com/userDetails`)
-.then((res)=>{
-    return res.json();
-}).then((data)=>{
-    // console.log(data);
-    // console.log(data.length);
-    TotalCustomer.innerText=data.length;
-
-}).catch((err)=>{
-    console.log(err);
-})

@@ -7,7 +7,7 @@ body{
 }
 #left{
     background-color: #e0ebf4 ;
-    height: 800px;
+    height: 740px;
     width: 50%;
 }
 
@@ -122,4 +122,10 @@ body{
     width: 184px;
     background-color: #3e556a;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#error{
+    margin-bottom: -50px;
+    text-align: end;
+    margin-right: -18px;
+    color: red;
 }

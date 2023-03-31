@@ -151,6 +151,10 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, ca
         localStorage.setItem('Allcartproduct', JSON.stringify(orderData))
     })
     card.append(bags)
+    card.addEventListener('click', () => {
+        localStorage.setItem('product', id)
+        window.location.href = 'individual.html'
+    })
     return card
 }
 function appendToDom(arr) {

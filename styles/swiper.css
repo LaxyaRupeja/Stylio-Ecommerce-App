@@ -27,13 +27,11 @@
   object-fit: cover;
   
 }
-.swiper mySwiper2 {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 300px;
-    margin-top: 0;
+.swiper-slide img:hover {
+  transform: scale(1.02);
+  transition: transform 1.0s;
 }
+
 .horizontal-banner img {
     width: 100%;
     object-fit: cover;
@@ -47,4 +45,9 @@
     width: 100%;
     object-fit: cover;
     margin-top: 0px; 
+}
+.last-banner img{
+  width: 100%;
+  object-fit: cover;
+  margin-top: 0px; 
 }

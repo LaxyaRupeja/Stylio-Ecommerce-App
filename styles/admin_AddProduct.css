@@ -52,6 +52,7 @@ nav{
 #background{
     display: flex;
     /* border: 1px solid blue; */
+   
     margin-top: 1%;
     margin-bottom: 1%;
     height: 5vh;
@@ -110,7 +111,7 @@ a{
     border-radius: 5px;
     
 }
-#dashboard{
+#Addproduct{
     background-color: #9a9a9a;
 }
 
@@ -128,20 +129,52 @@ a{
     justify-content: space-evenly;
 
 }
-
-#data>div{
-    /* border: 1px solid black; */
-    text-align: center;
-    width: 20%;
-    height: 8vh;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px #9a9a9a;
+#data>button{
+    width: 10%;
+    height: 4vh;
+    margin-bottom: 2%;
     background-color: rgb(49, 23, 35);
     color: #FFFFFF;
-    margin: 1% 0% 1% 0%;
-    padding-top:1% ;
-
+    border-radius: 4px;
 }
+ /* form */
+ #form{
+    display: none;
+    border: 2px solid  rgb(49, 23, 35);
+    width: 35%;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #9a9a9a;
+ }
+ form>input:hover{
+     background-color: rgb(49, 23, 35);
+     color: #FFFFFF;
+ }
+ #form>img{
+    width: 5%;
+    height: 4vh;
+    margin-left: 90%;
+ }
+ form{
+    margin-left: 4%;
+ }
+ form>input{
+    margin-bottom: 7px;
+    width: 80%;
+    height: 4vh;
+    border-radius: 4px;
+    padding-left: 2px;
+ }
+ form>select{
+    margin-bottom: 2%;
+    width: 40%;
+    height: 4vh;
+ }
+
+
+
+
+
 #data>div:hover{
     background-color: #9a9a9a;
     color: black;

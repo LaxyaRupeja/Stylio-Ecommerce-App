@@ -67,6 +67,10 @@
 #navbar > div:nth-child(7) {
     flex-basis: 25%;
 }
+#navbar a {
+    text-decoration: none;
+    color: #2F4254;
+}
 #subnavbar {
     display: grid;
     grid-template-rows: 35px 50px;
@@ -114,7 +118,7 @@
 }
 #subnavbar > div:nth-child(2) > div:nth-child(2) {
     position: absolute;
-    right: 20.8%;
+    right: 21.8%;
     top: 46px;
     color:#2F4254;
 }
@@ -225,6 +229,9 @@
     #cart_icon {
         padding-left: 500px;
     }
+    #subnavbar > div:nth-child(2) > div:nth-child(2) {
+        right: 29.8%;
+    }
 }
 
 @media (max-width: 700px) {
@@ -241,12 +248,14 @@
 }
 
 
+
 main{
     display: flex;
     width: 70%;
     margin: auto;
     /* overflow: hidden; */
-    margin-top: 89px;
+    margin-top: 109px;
+    margin-bottom: 109px;
     /* border: 1px solid red; */
     justify-content: space-between;
 }
@@ -367,7 +376,7 @@ main{
 .addtocard,.wishlist{
     /* border: 1px solid black; */
     height: 40px;
-
+    cursor: pointer;
     width: 300px;
 }
 .addtocard{

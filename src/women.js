@@ -1,9 +1,57 @@
 let orderData = JSON.parse(localStorage.getItem("Allcartproduct")) || []
+let userdata = JSON.parse(localStorage.getItem("credentials")) || [];
+let globalarr = [];
+let five = document.querySelector('.below500  > input')
+let fivetotho = document.querySelector('.fivetotho  > input');
+let fiveteen = document.querySelector('.fiveteen  > input');
+let twok = document.querySelector('.twok  > input');
+let moretwok = document.querySelector('.moretwok  > input');
+five.addEventListener('click', () => {
+    if (five.checked) {
+        fetchData(`https://stylio.onrender.com/products?price_lte=500`)
+    }
+    else {
+        fetchData(`https://stylio.onrender.com/products`)
+    }
+})
+fivetotho.addEventListener('click', () => {
+    if (fivetotho.checked) {
+        fetchData(`https://stylio.onrender.com/products?price_lte=1000&price_gte=501`)
+    }
+    else {
+        fetchData(`https://stylio.onrender.com/products`)
+    }
+})
+fiveteen.addEventListener('click', () => {
+    if (fiveteen.checked) {
+        fetchData(`https://stylio.onrender.com/products?price_lte=1500&price_gte=1001`)
+    }
+    else {
+        fetchData(`https://stylio.onrender.com/products`)
+    }
+})
+twok.addEventListener('click', () => {
+    if (twok.checked) {
+        fetchData(`https://stylio.onrender.com/products?price_lte=2000&price_gte=1501`)
+    }
+    else {
+        fetchData(`https://stylio.onrender.com/products`)
+    }
+})
+moretwok.addEventListener('click', () => {
+    if (moretwok.checked) {
+        fetchData(`https://stylio.onrender.com/products?price_gte=2001`)
+    }
+    else {
+        fetchData(`https://stylio.onrender.com/products`)
+    }
+})
 function fetchData(url) {
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
             appendToDom(data)
+            globalarr = data
         })
         .catch((err) => console.log(err))
 }
@@ -136,19 +184,40 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, ca
       <p id="strip">₹${price}</p>
       <p class="dis">(${discount}% off)</p>
     </div>`
-    icon.addEventListener("click", () => {
-        let obj = {
-            id: id,
-            img: imgUrl,
-            brand: brandName,
-            price: price,
-            gender: gende,
-            category: cat,
-            title: titleD,
-            discount: discount
+    icon.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (userdata.length == 0) {
+            window.location.href('signIn.html')
         }
-        orderData.push(obj);
-        localStorage.setItem('Allcartproduct', JSON.stringify(orderData))
+        else {
+            let obj = {
+                id: id,
+                img: imgUrl,
+                brand: brandName,
+                price: price,
+                gender: gende,
+                category: cat,
+                title: titleD,
+                discount: discount
+            }
+            // orderData.push({...obj,quantity:1});
+            if (checkDuplicate(obj)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Product Already in the Bag',
+                    footer: '<a href="cart.html">Go to the cart</a>'
+                })
+            }
+            else {
+                orderData.push({ ...obj, quantity: 1 });
+                localStorage.setItem('Allcartproduct', JSON.stringify(orderData));
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Added To Bag',
+                    footer: '<a href="">Go to Cart</a>'
+                })
+            }
+        }
     })
     card.append(bags)
     card.addEventListener('click', () => {
@@ -157,16 +226,27 @@ function createCard(imgUrl, brandName, titleD, afterDis, price, discount, id, ca
     })
     return card
 }
+function checkDuplicate(element) {
+    for (let i = 0; i < orderData.length; i++) {
+        if (orderData[i].id == element.id) {
+            return true;
+        }
+    }
+    return false;
+}
 function appendToDom(arr) {
     cardlist.innerHTML = null;
+    let count = 0;
     arr.forEach(el => {
         if (el.gender == "Female") {
+            count++;
             let disprice = el.price - (el.price * (el.discount / 100))
             disprice = disprice.toFixed(1)
             cardlist.append(createCard(el.img, el.brand, el.title, disprice, el.price, el.discount, el.id, el.category, el.gender))
         }
 
     });
+    disTotalNO(count + " ")
 }
 let addTocart = document.getElementById('addtocart');
 let sort = document.getElementById('sortbyprice');
@@ -184,3 +264,12 @@ sort.addEventListener('change', () => {
 
     }
 })
+function disTotalNO(no) {
+    document.getElementById('totalItem').innerText = no;
+}
+document.getElementById('search_box').addEventListener('input', () => {
+    let searchText = document.getElementById('search_box').value.toLowerCase();
+    let filtered = globalarr.filter(el => el.title.toLowerCase().includes(searchText));
+    appendToDom(filtered);
+
+});

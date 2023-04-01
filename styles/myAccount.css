@@ -1,0 +1,77 @@
+body {
+    background-color: #f7f7f7;
+}
+.Orders {
+    width: 60%;
+    margin: auto;
+    margin-top: 140px;
+    display: flex;
+    gap: 40px;
+}
+.right_div{
+    float: left;
+    width: 22%;
+    margin-right: 20px;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 376px;
+}
+.right_div > div:nth-child(1) h2{
+    color: #333;
+    font-size: 17px;
+    font-family: Lora;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+.right_div h3 {
+    color: #4a657a;
+    font-size: 15px;
+    padding-top: 12px;
+    margin-bottom: 9px;
+    font-weight: bold;
+    display: block;
+}
+.right_div p {
+    font-size: 12px;
+    text-align: left;
+    color: #999;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 19px;
+    white-space: nowrap;
+}
+#Profile h3 {
+    color: #4a657a;
+    font-size: 15px;
+    padding-top: 12px;
+    margin-bottom: 9px;
+    font-weight: bold;
+    display: block;
+}
+#left_div {
+    float: left;
+    width: 75%;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 376px;
+    
+}
+#left_div h1 {
+    color: #323232;
+    font-size: 34px;
+    font-family: Lora;
+    text-align: center;
+    font-weight: 200;
+}
+#left_div p {
+    text-align: center;
+    color: #323232;
+    letter-spacing: 0;
+    font-family: SourceSansPro;
+    padding-bottom: 20px;
+}

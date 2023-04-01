@@ -20,12 +20,10 @@ flycontainer.addEventListener("mouseenter", displayNavContainer);
 flycontainer.addEventListener("mouseleave", hideNavContainer);
 
 
-
-if (localStorage.getItem("credentials") == null) {
-  localStorage.setItem("credentials", JSON.stringify({ username: null }));
-}
+//display username
 let username = JSON.parse(localStorage.getItem("credentials"));
-let name1 = username.username;
+console.log(username)
+let name1 = username[0].name;
 if (name1 != null) {
   change_info();
 }
@@ -36,12 +34,14 @@ function change_info() {
 
   let div1 = document.createElement("div");
   let p1 = document.createElement("p");
+  p1.id = "user_name";
   p1.innerText = "Hi " + name1;
   div1.append(p1);
 
   let div2 = document.createElement("div");
   let p2 = document.createElement("p");
   p2.innerText = "My Account";
+  p2.id = "my_account";
   div2.append(p2);
 
   let div3 = document.createElement("div");
@@ -68,3 +68,10 @@ function signout() {
 if (signout_btn != null) {
   signout_btn.addEventListener("click", signout);
 }
+
+let account = document.getElementById("my_account");
+
+account.addEventListener("click", () => {
+  location.href = "./myAccount.html";
+})
+

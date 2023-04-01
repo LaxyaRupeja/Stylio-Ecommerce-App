@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/order.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="icon" href="./images/icon.png">  
@@ -36,7 +36,7 @@
                     <p>Customer Care</p>
                 </div>
                 <div id="navbar_signin_btn">
-                    <a href="./signIn.html">Sign In / Join AJIO</a>
+                    <a href="">Sign In / Join AJIO</a>
                 </div>
             </div>
             <div>
@@ -136,67 +136,64 @@
        </div>
     </div>
     <br><br><br><br><br>
-   <!-- mid section -->
-    <div class="reliance_img">
-        <img src="https://assets.ajio.com/cms/AJIO/WEB/28032021-D-cartpagebanner-relianceones.jpg" alt="error">
-    </div>
-    <hr>
-    <br>
-    <h2 id="bagID">My Bag <span>(item : <span id="total-product">0</span> )</span> </h2>
-    <br>
-    <hr>
-    <div id="product_main_container">
-        <div class="product_left_container">
-            <!-- <div class="detail_left"> -->
-            <!-- <div class="product_image"></div>
-            <div class="brand"></div> 
-            <div class="product"></div> 
-            <div class="price"></div> -->
-            <!-- </div> -->
-        </div>
 
-        
-        <div class="product_right_container">
-            <div class="orderdetails">Order Details</div><br>
-            <div id="bag">
-                <div class="bag_total">Bag Total</div>
-                <div class="bag_total_price"></div>
-            </div><br>
-            <div id="bag">
-                <div class="deliv">Delivery</div>
-                <div>FREE</div>
-            </div><br>
-            <div id="bag">
-                <div class="total">Total Amount</div>
-                <div class="totalamount"></div>
-            </div><br>
-            <a href="./address.html"><button class="shipping_btn">PROCEED TO SHIPPING</button></a>
+     <!-- ordered summary container start -->
+    <div class="order-cont">
+        <div class="order-text">
+            <p id="orderText">Thank You</p>
         </div>
-    </div><br> <br><br>
-
-<!-- <hr class="hr">
-    <div class="bottom_icons">
-        <div class="exchange_icons">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOSleffsgSsashwROvgH26qoTpSqlQBMe0Shd5emGuHC7qRZTl" alt=""><br><br>
-            <div>EASY EXCHANGE</div>
-        </div>
-        <div class="exchange_icons">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStPsdLlQq9T_-o_ndL1lc66uwb0rnsXF7tdft3ExBdkJik6LAa" alt=""><br><br>
-            <div>100% HANDPICKED</div>
-        </div>
-        <div class="exchange_icons">
-            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcScEyVI4gDhOVv62XgCYGYnZImfcezYA1huL35dY6yZARjpV6-2" alt=""><br><br>
-            <div>ASSURED QUALITY</div>
+        <div class="btn-cont">
+            <button onclick="goToHome()" class="cont-shopping">CONTINUE SHOPPING</button>
         </div>
     </div>
-<hr> -->
 
+    <!-- ordered summary container END -->
+    <!-- mid section start -->
+        <div class="order-summary-container">
+            <div class="left">
+                <div class="text">Order Summary</div>
+    
+    
+                <div id="item-card">
+                    <!-- <div class="product-show">
+                        
+                        <img src="images/procuct_1_images/rayban3" alt="">
+                        
+                        <a href="">Ray Ban - 0RB3671186/3160 UV-Protected Full-Rim Shield Sunglasses</a>
+                        <div class="product-size">Size <span>M</span> &or;</div>
+                        <div class="cart-qty">Qty <span> 1</span> &or;</div>
+                        <div class="total-amount">Rs. 950</div>
+                    </div> -->
+                </div>
+    
+            </div>
+    
+            <div class="right">
+    
+                <div class="order-summary">
+                    <div>Order Summary</div>
+                    <div class="summary-amount">
+                        <div>Bag Total</div>
+                        <div id="summary-bag-total"></div>
+                    </div>
+                    <div class="summary-amount">
+                        <div>Delivery</div>
+                        <div id="summary-delivery">FREE</div>
+                    </div>
+                    <!-- <div class="summary-amount strong">
+                        <div>Order Total</div>
+                        <div id="summary-total"></div>
+                    </div> -->
+                    <div class="summary-amount strong">
+                        <div>Total amount</div>
+                        <div id="amount-payable"></div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+    <!-- mid section end  -->
 
-<!-- footer section  -->
-
-<!-- <br><br> -->
-<hr>
-
+    <hr>
 <div id="footer">
     <div>
       <img src="./images/footerIcons.jpeg">
@@ -251,5 +248,5 @@
 </div>
 
 </body>
-<script src="./src/cart.js"></script>
+<script src="./src/order.js"></script>
 </html>

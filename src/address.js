@@ -54,16 +54,20 @@ function taking_input() {
 }
 button.addEventListener('click', taking_input)
 
-// function goToPayment() {
-//     let loginUser = JSON.parse(localStorage.getItem('status'));
-//     if(loginUser[0].login==true){
-//         window.location.href = 'payment.html'
-//     }
-//     else{
-//         showBox()
-//     }
-// }
-
+function goToPayment() {
+    let userdata = JSON.parse(localStorage.getItem("credentials")) ||[]
+    if(userdata.length == 0){
+        
+        window.location.href = 'signIn.html'
+    }
+    else{
+        // window.location.href = 'signIn.html'
+        window.location.href = 'payment.html'
+    }
+}
+function signIn(){
+    window.location.href = 'signIn.html'
+}
 
 
 var finalcart = JSON.parse(localStorage.getItem("Allcartproduct"))||[];
@@ -85,3 +89,40 @@ totalamount.textContent = "Rs." + finalprice;
 
 document.querySelector("#bag-item-amount").append(bagtotal);
 document.querySelector("#bag-total-amount").append(totalamount);
+
+
+
+
+// let arr = []
+async function addressData(){
+  try{
+    let obj ={
+        name :dataArray.name,
+        flat : dataArray.flat,
+        landmark : dataArray.landmark,
+        locality : dataArray.locality,
+        city : dataArray.city,
+        state : dataArray.state,
+        pincode : dataArray.pincode,
+        mobile : dataArray.mobile
+    }
+    let response = await fetch(`https://stylio.onrender.com/userDetails`,{
+      method : "POST",
+      headers : {
+          "Content-Type" : "application/json"
+      },
+      body : JSON.stringify(obj)
+    });
+    let data = await response.json();
+    // arr = data;
+    console.log(data);
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+// window.addEventListener("load",()=>{
+//     addressData()
+//   })
+  

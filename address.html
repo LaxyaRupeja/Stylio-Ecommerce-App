@@ -6,6 +6,7 @@
     <title>address page</title>
     <link rel="stylesheet" href="./styles/address1.css">
     <link rel="stylesheet" href="./styles/address2.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -19,7 +20,7 @@
                     <li>
                         <a href="#" id="username"></a>
                     </li>
-                    <li onclick="showBox()">
+                    <li onclick="signIn()">
                         <p id="signin">Sign In / Join AJIO</p>
                     </li>
                     <li onclick="signOut()">
@@ -47,48 +48,6 @@
         </header>
     </div>
 
-    <!--------------SignIn box start ---------->
-    <!-- <div class="sign-in-container">
-        <div class="sign-in-box">
-
-            <div onclick="hideBox()" class="close">X</div>
-
-
-            <h2 class="box-heading top">Welocome to AJIO</h2>
-            <h3 class="box-heading join">Join/Sign In using</h3>
-            <div class="link-box">
-                <div class="fb"><img src="images/signInBox/fb.jpg" alt=""> Facebook</div>
-                <div class="google"><img src="images/signInBox/google.jpg" alt=""> Google</div>
-            </div>
-            <div class="or">Or</div>
-            <div class="line left"></div>
-            <div class="line right"></div>
-            <h3 class="box-heading small" id="inputHeading">Enter Mobile Number*</h3>
-
-            <p id="warning"></p>
-            <input type="text" id="number"><br>
-            <div class="hide input-container" id="inputCont">
-                <div class="radioBox" id="radioBox">Gender:
-                    <label>
-                        <input type="radio" name="radio-button" value="no" />
-                        <span>Female</span>
-                    </label>
-
-                    <label>
-                        <input type="radio" name="radio-button" value="no" />
-                        <span>Male</span>
-                    </label>
-                </div>
-                <input type="text" id="name" placeholder="Name"><br>
-                <input type="text" id="email" placeholder="Email"><br>
-                <input type="password" id="password" placeholder="Password">
-            </div>
-            <button onclick="goToSignUP()" class="continue" id="continueBtn">CONTINUE</button>
-            <h3 class="box-heading lite">By Signing in, I agree to <span class="blue-span">Term and Conditions.</span>
-            </h3>
-        </div>
-    </div> -->
-    <!--------------SignIn box end ------------>
     <!-- main body container starts -->
 
     <div class="main-container">
@@ -118,7 +77,8 @@
                     <div>Total Amount</div>
                     <div id="bag-total-amount"></div>
                 </div>
-                <button onclick="goToPayment()" id="proceed-to-ship">PROCEED TO PAYMENT</button>
+                <!-- onclick="goToPayment()"  -->
+                <button onclick="goToPayment() "id="proceed-to-ship">PROCEED TO PAYMENT</button>
             </div>
         </div>
     </div>
@@ -197,6 +157,62 @@
         </div>
     </footer>
 </body>
+
+<br><br>
+<hr>
+
+<div id="footer">
+    <div>
+      <img src="./images/footerIcons.jpeg">
+    </div>
+    <div>
+      <div id="sub_footer">
+        <div>
+          <h4>Stylio</h4>
+          <p>Who We Are</p>
+          <p>Join Our Team</p>
+          <p>Terms & Conditions</p>
+          <p>We Respect Your Privacy</p>
+          <p>Fees & Payments</p>
+          <p>Returns & Refunds Policy</p>
+          <p>Promotions Terms & Conditions</p>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <p>Track Your Order</p>
+          <p>Frequently Asked Questions</p>
+          <p>Returns</p>
+          <p>Cancellations</p>
+          <p>Payments</p>
+          <p>Customer Care</p>
+          <p>How Do I Redeem My Coupon</p>        
+        </div>
+        <div>
+          <h4>Shop By</h4>
+          <p>Men</p>
+          <p>Women</p>
+          <p>Kids</p>
+          <p>Indie</p>
+          <p>Stores</p>
+          <p>New Arrivals</p>
+          <p>Brand Directory</p>
+          <p>Home</p>
+          <p>Collections</p>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>Twitter</p>
+          <p>Pinterest</p>
+        </div>
+      </div>
+      <div>
+        <img src="./images/footerBottom.jpeg">
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </html>

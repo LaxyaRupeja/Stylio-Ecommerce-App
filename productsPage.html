@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/footer.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <title>Men</title>
 </head>
@@ -13,13 +14,17 @@
 <body>
   <div id="navbar">
     <div>
-      <img src="./images/logo.png" id="logo">
+      <a href="./index.html"><img src="./images/logo.png" id="logo"></a>
     </div>
     <div class="one" id="men_link">
-      <p>MEN</p>
+      <a href="./productsPage.html">
+        <p>MEN</p>
+      </a>
     </div>
     <div class="one" id="women_link">
-      <p>WOMEN</p>
+      <a href="./women.html">
+        <p>WOMEN</p>
+      </a>
     </div>
     <div class="one" id="kids_link">
       <p>KIDS</p>
@@ -44,7 +49,9 @@
           <input type="text" placeholder="Search AJIO" id="search_box">
         </div>
         <div class="search">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button><span class="material-icons-outlined">
+              search
+            </span></button>
         </div>
         <div>
           <a href=""><span class="material-icons-outlined">
@@ -52,7 +59,7 @@
             </span></a>
         </div>
         <div id="cart_icon">
-          <a href="cart.html"><span class="material-icons-outlined">
+          <a href=""></a><span class="material-icons-outlined">
             shopping_bag
           </span></a>
         </div>
@@ -234,7 +241,7 @@
     <div class="center">
       <h1>Men's Clothing</h1>
       <div class="sortStrip">
-        <p><span id="totalItem">324 </span>Item Found</p>
+        <p><span id="totalItem"></span>Item Found</p>
         <select name="sort" id="sortbyprice">
           <option value="">Sort By Price</option>
           <option value="a-z">
@@ -251,7 +258,59 @@
       </div>
     </div>
   </main>
+  <div id="footer">
+    <div>
+      <img src="./images/footerIcons.jpeg">
+    </div>
+    <div>
+      <div id="sub_footer">
+        <div>
+          <h4>Stylio</h4>
+          <p>Who We Are</p>
+          <p>Join Our Team</p>
+          <p>Terms & Conditions</p>
+          <p>We Respect Your Privacy</p>
+          <p>Fees & Payments</p>
+          <p>Returns & Refunds Policy</p>
+          <p>Promotions Terms & Conditions</p>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <p>Track Your Order</p>
+          <p>Frequently Asked Questions</p>
+          <p>Returns</p>
+          <p>Cancellations</p>
+          <p>Payments</p>
+          <p>Customer Care</p>
+          <p>How Do I Redeem My Coupon</p>
+        </div>
+        <div>
+          <h4>Shop By</h4>
+          <p>Men</p>
+          <p>Women</p>
+          <p>Kids</p>
+          <p>Indie</p>
+          <p>Stores</p>
+          <p>New Arrivals</p>
+          <p>Brand Directory</p>
+          <p>Home</p>
+          <p>Collections</p>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>Twitter</p>
+          <p>Pinterest</p>
+        </div>
+      </div>
+      <div>
+        <img src="./images/footerBottom.jpeg">
+      </div>
+    </div>
+  </div>
 </body>
 <script src="src/product.js"></script>
 <script src="https://kit.fontawesome.com/3f3c9dcd03.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>

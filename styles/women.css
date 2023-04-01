@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Source+Sans+3&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
 *{
     margin: 0;
@@ -6,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Source Sans 3', sans-serif;
 }
+
+  @import url('https://fonts.googleapis.com/css2?family=Lora&family=Source+Sans+3&display=swap');
+
 .optionsCat > div,.price > div,.Brand > div,.Size > div{
     /* display: none; */
     /* cursor: pointer; */
@@ -78,6 +80,10 @@ h3{
 #navbar > div:nth-child(7) {
     flex-basis: 25%;
 }
+#navbar a {
+    text-decoration: none;
+    color: #2F4254;
+}
 #subnavbar {
     display: grid;
     grid-template-rows: 35px 50px;
@@ -125,12 +131,9 @@ h3{
 }
 #subnavbar > div:nth-child(2) > div:nth-child(2) {
     position: absolute;
-    right: 17%;
-    top: 47px;
+    right: 21.8%;
+    top: 46px;
     color:#2F4254;
-}
-#subnavbar > div:nth-child(2) > div:nth-child(2) i {
-    font-size: 17px;
 }
 #subnavbar > div:nth-child(2) > div:nth-child(1) > input {
     border-radius: 20px;
@@ -239,14 +242,30 @@ h3{
     #cart_icon {
         padding-left: 500px;
     }
+    #subnavbar > div:nth-child(2) > div:nth-child(2) {
+        right: 29.8%;
+    }
 }
 
-
+@media (max-width: 700px) {
+    .one {
+        display:none;
+    }
+    
+    #subnavbar > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+4) {
+       display:none; 
+    }
+    #subnavbar {
+        display:none;
+    }
+}
 main{
     width: 80%;
     margin: auto;
     margin-top: 115px;
+    margin-bottom: 70px;
     display: flex;
+    
     /* border: 1px solid red; */
 }
 .category {
@@ -265,12 +284,7 @@ gap: 20px;
 
     padding-bottom: 10px;
 }
-.category{
-    /* border: 1px solid tomato; */
-}
-.category h2{
-    /* margin: 20px 0; */
-}
+
 .price{
     width: 100%;
 }
@@ -371,6 +385,7 @@ gap: 20px;
     grid-template-columns: repeat(3,1fr);
     grid-auto-rows: 1fr;
     gap: 20px;
+    color: #333333;
 }
 #nameP{
      
@@ -402,6 +417,10 @@ gap: 20px;
         width: 100%;
     }
 }
-h3{
-    /* pointer-events: none; */
+
+#sortbyprice{
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    padding: 0 10px;
 }

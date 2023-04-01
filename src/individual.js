@@ -1,16 +1,19 @@
 let main = document.getElementsByTagName('main')[0];
 let lsID = localStorage.getItem("product");
+let orderData = JSON.parse(localStorage.getItem("Allcartproduct")) || []
+let userdata = JSON.parse(localStorage.getItem("credentials")) || []
+
 function fetchData() {
-    fetch(`https://stylio.onrender.com/products/${lsID}`)
-        .then((res) => res.json())
-        .then((data) => {
-            let disprice = data.price - (data.price * (data.discount / 100))
-            appendToDom(data.title, data.price, data.img, data.brand, data.discount, disprice)
-        })
+  fetch(`https://stylio.onrender.com/products/${lsID}`)
+    .then((res) => res.json())
+    .then((data) => {
+      let disprice = data.price - (data.price * (data.discount / 100))
+      appendToDom(data.title, data.price, data.img, data.brand, data.discount, disprice, data.id, data.gender, data.category)
+    })
 }
 fetchData();
-function appendToDom(name, price, img, brand, dis, disprice) {
-    main.innerHTML = `<div class="imagediv">
+function appendToDom(name, price, img, brand, dis, disprice, id, gende, cat) {
+  main.innerHTML = `<div class="imagediv">
     <img
       src="${img}"
       alt=""
@@ -63,22 +66,63 @@ function appendToDom(name, price, img, brand, dis, disprice) {
       </div>
     </div>
   </div>`
+  document.getElementById('addtocart').addEventListener('click', () => {
+    if (userdata.length == 0) {
+      window.location.href = 'signIn.html'
+    }
+    else {
+      let obj = {
+        id: id,
+        img: img,
+        brand: brand,
+        price: price,
+        gender: gende,
+        category: cat,
+        title: name,
+        discount: dis
+      }
+      // orderData.push({...obj,quantity:1});
+      if (checkDuplicate(obj)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Product Already in the Bag',
+          footer: '<a href="cart.html">Go to the cart</a>'
+        })
+      }
+      else {
+        orderData.push({ ...obj, quantity: 1 });
+        localStorage.setItem('Allcartproduct', JSON.stringify(orderData));
+        Swal.fire({
+          icon: 'success',
+          title: 'Added To Bag',
+          footer: '<a href="">Go to Cart</a>'
+        })
+      }
+    }
+  })
 }
-
 let mask = document.getElementById("layer_mask");
 let flycontainer = document.getElementById("dropdown_container");
 function displayNavContainer() {
-    mask.style.visibility = "visible";
-    flycontainer.style.visibility = "visible";
+  mask.style.visibility = "visible";
+  flycontainer.style.visibility = "visible";
 }
 function hideNavContainer() {
-    mask.style.visibility = "hidden";
-    flycontainer.style.visibility = "hidden";
+  mask.style.visibility = "hidden";
+  flycontainer.style.visibility = "hidden";
 }
 let menu_options = document.getElementsByClassName("one");
 for (let i = 0; i < menu_options.length; i++) {
-    menu_options[i].addEventListener("mouseenter", displayNavContainer);
-    menu_options[i].addEventListener("mouseleave", hideNavContainer);
+  menu_options[i].addEventListener("mouseenter", displayNavContainer);
+  menu_options[i].addEventListener("mouseleave", hideNavContainer);
 }
 flycontainer.addEventListener("mouseenter", displayNavContainer);
 flycontainer.addEventListener("mouseleave", hideNavContainer);
+function checkDuplicate(element) {
+  for (let i = 0; i < orderData.length; i++) {
+    if (orderData[i].id == element.id) {
+      return true;
+    }
+  }
+  return false;
+}

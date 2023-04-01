@@ -6,6 +6,7 @@ let body=document.querySelector("body");
 let nav=document.querySelector("nav");
 let allpro=document.querySelector("#product");
 let form=document.querySelector("#form");
+let data=document.querySelector("form");
 
 
 black.addEventListener("click",()=>{
@@ -33,11 +34,11 @@ let button=document.querySelector("button");
 let addform=document.querySelector("#form");
 let img=document.querySelector("#img");
 
-button.addEventListener("click",()=>{
-    addform.style.display="grid"
-    product.style.display="none";
-    pagination.style.display="none";
-})
+// button.addEventListener("click",()=>{
+//     addform.style.display="grid"
+//     product.style.display="none";
+//     pagination.style.display="none";
+// })
 img.addEventListener("click",()=>{
     addform.style.display="none"
     product.style.display="grid";
@@ -62,7 +63,7 @@ window.addEventListener("load",()=>{
 })
 
 function fetchrender(page){
-    fetch(`https://stylio.onrender.com/products?_limit=8&_page=${page}`,{
+    fetch(`https://stylio.onrender.com/products?_limit=4&_page=${page}`,{
         method:"GET",
         headers:{
             "Content-Type":"application/json",
@@ -71,7 +72,7 @@ function fetchrender(page){
         // console.log(`X-Total-Count`);
         let count=res.headers.get("X-Total-Count");
        
-        let buttton=Math.ceil(count/8);
+        let buttton=Math.ceil(count/4);
         // console.log(buttton);
         pagination.innerHTML=null;
         for(let i=1;i<=buttton;i++){
@@ -108,7 +109,7 @@ function allbutton(i){
     product.append(div);
 
     data.forEach((item)=>{
-        let getproduct= getdata(item.title,item.price,item.img);
+        let getproduct= getdata(item.id,item.title,item.brand,item.price,item.img,item.category,item.gender,item.discount);
         div.append(getproduct);
     })
 
@@ -116,24 +117,103 @@ function allbutton(i){
     
  }
 
-   function getdata(title,price,img){
+   function getdata(id,title,brand,price,img,category,gender,discount){
       let div=document.createElement("div");
 
-      let Name=document.createElement("h5");
+      let Name=document.createElement("h3");
       Name.innerText=title;
+      
+
+      let Brand=document.createElement("p");
+      Brand.innerText=brand;
+      Brand.style.color="#b19975";
+  
+
+      let aid=document.createElement("p");
+      aid.innerText=id;
+
+      let Category=document.createElement("p");
+      Category.innerText=`Category:- ${category}`;
+
+      let Gender=document.createElement("p");
+      Gender.innerText=gender;
+     
+
+      let Discount=document.createElement("p");
+      Discount.innerText=`Discount :- ${discount}%`;
+      Discount.style.color="#b19975";
 
       let Price=document.createElement("p");
-      Price.innerText=`₹ ${price}`;
+      Price.innerText=`Price:-₹ ${price}`;
+     
 
       let Image=document.createElement("img");
       Image.src=img;
 
-      div.append(Image,Name,Price);
+      
+
+      let Edit=document.createElement("button");
+      Edit.innerText="Edit";
+      Edit.style.backgroundColor="#b19975"
+       Edit.addEventListener("click",()=>{
+        addform.style.display="grid";
+        product.style.display="none";
+        pagination.style.display="none";
+        data.Aid.value=id;
+        data.name.value=title;
+        data.brand.value=brand;
+        data.category.value=category;
+        data.price.value=price;
+        data.discount.value=discount;
+        data.gender.value=gender;
+        data.Image.value=img;
+
+       });
+
+      let Delete=document.createElement("button");
+      Delete.innerText="Delete";
+      Delete.style.backgroundColor="#ed5f5f";
+      Delete.addEventListener("click",()=>{
+           deletefunction(id);
+      });
+
+      
+    
+      div.append(Image,id,Brand,Name,Gender,Category,Discount,Price,Edit,Delete);
 
       return div;
    }
 
-//    add product in 
+// delete data
+function deletefunction(data){
+    fetch(`https://stylio.onrender.com/products/${data}`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        // body:JSON.stringify(obj),
+     }).then((res)=>{
+        return res.json();
+     }).then((data)=>{
+        console.log(data);
+     }).catch((err)=>{
+        console.log(err);
+     })
+//   alert
+     Swal.fire(
+        'Product Deleted',
+        'You clicked the button!',
+        'success'
+      );
+//   page is refresh
+    setTimeout(()=>{
+        location.reload();
+
+    },3000)
+
+}
+
+//    update product in 
    let detarils=document.querySelector("form");
    
 
@@ -147,12 +227,15 @@ function allbutton(i){
         img:detarils.Image.value,
         price:detarils.price.value,
         discount:detarils.discount.value,
-        gender:detarils.gender.value
+        gender:detarils.gender.value,
+        id:detarils.Aid.value
     }
-       console.log(obj);
+       console.log(obj.id);
 
-     fetch(`https://stylio.onrender.com/products`,{
-        method:"POST",
+       
+
+       fetch(`https://stylio.onrender.com/products/${obj.id}`,{
+        method:"PUT",
         headers:{
             "Content-Type":"application/json",
         },
@@ -165,22 +248,27 @@ function allbutton(i){
         console.log(err);
      })
 
+//  alert
+Swal.fire(
+    'Product Details  updated',
+    'You clicked the button!',
+    'success'
+  );
 
 
-
-
-     Swal.fire(
-        'Product is add!',
-        'You clicked the button!',
-        'success'
-      );
-      setTimeout(()=>{
+    // refresh the page
+   
+   setTimeout(()=>{
         location.reload();
 
     },3000)
+
    
    
    })
+
+
+
 
 
 

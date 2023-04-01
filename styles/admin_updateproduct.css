@@ -111,7 +111,7 @@ a{
     border-radius: 5px;
     
 }
-#Addproduct{
+#updateproduct{
     background-color: #9a9a9a;
 }
 
@@ -202,20 +202,18 @@ a{
     height: 30vh;
 }
 .Allproduct>div{
-    width: 90%;
-    height: 30vh;
-    /* border: 1px solid blue; */
+    width: 100%;
+    height: 60vh;
+    border: 1px solid blue;
     text-align: center;
 }
 .Allproduct>div>img{
     width: 100%;
-    height: 70%;
+    height: 30vh;
     border-radius: 3px 3px 0px 0px;
     border: 1px solid black;
 }
-/* .Allproduct>div>img:hover{
-    transform: scale(1.1);
-} */
+
 #product{
     /* border: 1px solid rgb(219, 205, 205); */
     height: 50vh;
@@ -224,10 +222,10 @@ a{
 #pagination{
     /* border: 1px solid red; */
     margin-top: 20%;
-  
+   padding-left: 5%;
     margin: auto;
-    padding-left: 30%;
-    padding-top: 7%;
+    
+    padding-top: 12%;
     height: 5vh;
 }
 
@@ -237,5 +235,14 @@ a{
     height: 100%;
     border-radius: 4px;
     background-color: rgb(49, 23, 35);
-    color: #FFFFFF;
+    color: #e9dfdf;
+}
+.Allproduct>div>button{
+    width: 20%;
+    margin-left: 2%;
+   border: 0px;
+    border-radius: 3px;
+    height: 3vh;
+    margin-top: 2%;
+   
 }

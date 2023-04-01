@@ -35,7 +35,7 @@ for(let i=0; i<userdata.length; i++){
       notification.style.fontWeight ="bold"
 
       Swal.fire({
-         position: 'top-end',
+         position: 'center',
          icon: 'success',
          title: 'You sign In successfully',
          showConfirmButton: false,

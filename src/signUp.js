@@ -48,7 +48,7 @@ button.addEventListener("click", function(){
       localStorage.setItem("credentials", JSON.stringify(userdata))
 
       Swal.fire({
-         position: 'top-end',
+         position: 'center',
          icon: 'success',
          title: 'You sign In successfully',
          showConfirmButton: false,

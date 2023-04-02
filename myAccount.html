@@ -44,12 +44,10 @@
             </div>
             <div>
                 <div class="search">
-                    <input type="text" placeholder="Search AJIO" id="search_box">
-                </div>
-                <div class="search">
-                    <button><span class="material-icons-outlined">
-                        search
-                    </span></button>
+                    <input type="text" placeholder="Search AJIO" id="search_box" >
+                    <div class="icon"><span class="material-icons-outlined">
+                      search
+                  </span></div>
                 </div>
                 <div>
                     <a href=""><span class="material-icons-outlined">
@@ -158,13 +156,14 @@
         <div id="left_div">
             <h1>My Orders</h1>
             <p>View the summary of your past orders</p>
-            <div class=""></div>
+            <div id="orders_card"></div>
+            <div id="pagination_wrapper"></div>
         </div>
     </div>
     <script src="./src/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./src/swiper.js"></script>
-   
+    <script src="./src/myAccount.js"></script>
 
 </body>
 </html>

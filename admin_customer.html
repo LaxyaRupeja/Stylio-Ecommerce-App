@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin/Add Product</title>
-    <link rel="stylesheet" href="./styles/admin_AddProduct.css">
+    <title>admin/update_product</title>
+    <link rel="stylesheet" href="./styles/admin_customer.css">
 </head>
 <body>
 
     <nav>
         <div id="nav_div1">
-            <img src="https://www.linkedin.com/dms/D4D06AQERvXQ30pZJrQ/messaging-attachmentFile/0/1680066776013?m=AQLbb5XgHzgHqAAAAYcryK0-Bf0xZafY5PvobuLvMUPhEWzdhNARXHscHw&ne=1&v=beta&t=3VAzKRoairUY4vA3yelbMcFDsKQB-lWYv5vXuSlVqvw" alt="">
+            <img src="./images/logo.png" alt="">
         </div>
-        <h1>Add Product</h1>
+        <h1>Customer Details</h1>
         <div id="nav_div2">
             <div id="aniket_nav">
                 <img src="./images/admin.png" alt="">
@@ -66,66 +66,27 @@
 
         </div>
 
-        <div id="aniket_product">
-            <div id="data">
-
-                <button> Add Product</button>
-               <!-- <form id="form">
-                <input type="text" id="brand" placeholder="Brand">
-                <input type="text" id="category" placeholder="Category">
-                <input type="text" id="img" placeholder="Image">
-                <input type="text" id="price" placeholder="Price">
-                <input type="number" id="discount" placeholder="Discount">
-                <input type="text" id="gender" placeholder="Gender">
-                <input type="submit" id="submit" >
-               </form> -->
-
-            </div>
-
-            <div id="form">
-                  <img id="img" src="data:image/png;base64,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" alt="">
-                <form >
-                    <label> Title</label>
-                    <br>
-                    <input type="text" id="name" placeholder="Title" required >
-                    <br>
-                    <label> Brand Name</label>
-                    <br>
-                    <input type="text" id="brand" placeholder="Brand" required>
-                    <br>
-                    <label> Category</label>
-                    <br>
-                    <input type="text" id="category" placeholder="Category" required>
-                    <br>
-                    <label> Image</label>
-                    <br>
-                    <input type="text" id="Image" placeholder="Image" required>
-                    <br>
-                    <label> Price</label>
-                    <br>
-                    <input type="number" id="price" placeholder="Price" required>
-                    <br>
-                    <label> Discount</label>
-                    <br>
-                    <input type="number" id="discount" placeholder="Discount" required>
-                    <br>
-                    <label> Gender</label>
-                    <br>
-                    <select id="gender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                    <br>
-                    <input type="submit" id="submit" >
-                   </form> 
-            
-            </div>
+        <div  id="aniket_product">
 
             <div  >
-                 <div id="product" >
-                     <!--all product are display here-->
-                 </div>
-                
+                 <table>
+                    <thead>
+                        <tr>
+                            <th>SR.No</th>
+                          <th>Name</th>
+                          <th>Mobile No.</th>
+                          <th>Address</th>
+                          <th>Landmark</th>
+                          <th>Pincode</th>
+                          <th>City</th>
+                          <th>State</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- all data come from API -->
+                    </tbody>
+                 </table>
                  
             
 
@@ -136,15 +97,11 @@
 
             </div>
 
-            <div style="width: 100%; height: 4vh;">
-
-            </div>
-
+            
         </div>
 
     </div>
     
 </body>
 </html>
-<script src="./src/admin_AddProduct.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./src/admin_customer.js"></script>

@@ -72,7 +72,7 @@ nav{
 #aniket_dashboard{
     display: flex;
     width: 95%;
-    height: 100vh;
+    height: 90vh;
     margin: auto;
     /* background-color: aqua; */
     /* border: 1px solid black; */
@@ -110,7 +110,7 @@ a{
     height: 100%;
     border-radius: 5px;
 }
-#updateproduct{
+#Customer{
     background-color: #9a9a9a;
 }
 
@@ -136,7 +136,11 @@ a{
     color: #FFFFFF;
     border-radius: 4px;
 }
- /* form */
+#aniket_product{
+    border: 2px solid #2f4254;
+    border-radius: 0px 10px 10px 0px;
+}
+ /* form
  #form{
     display: none;
     border: 2px solid #2f4254;;
@@ -180,9 +184,7 @@ a{
 
 }
 
-#aniket_product{
-    border: 2px solid #2f4254;
-    border-radius: 0px 10px 10px 0px;
+
  
    
 }
@@ -192,7 +194,7 @@ a{
 }
 #product{
     /* border: 1px solid blue; */
-}
+/* }
 .Allproduct{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -204,7 +206,7 @@ a{
     width: 98%;
     height: 100%;
     /* border: 1px solid blue; */
-    text-align: center;
+    /* text-align: center;
 }
 .Allproduct>div>img{
     width: 100%;
@@ -215,7 +217,38 @@ a{
 
 #product{
     /* border: 1px solid rgb(219, 205, 205); */
-    height: 50vh;
+    /* height: 50vh;
+} */ */ */ */
+#aniket_product>div{
+    margin: auto;
+}
+
+table{
+    border: 1px solid black;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 90%;
+    border-radius: 4px;
+}
+thead>tr>th{
+    color: #2f4254;
+    border: 1px solid rebeccapurple;
+    margin-left: 10%;
+    text-align: center;
+    border-radius: 3px;
+}
+ 
+
+thead{
+    border: 1ps solid red;
+}
+tbody{
+    border: 1px solid green;
+}
+tbody>tr>td{
+    margin-left: 5%;
+    text-align: center;
+    
 }
 
 #pagination{
@@ -228,7 +261,7 @@ a{
 
 #pagination>button{
     width: 10%;
-    margin-left: 1%;
+    margin-left: 40%;
     height: 100%;
     border-radius: 4px;
     background-color:#2f4254;

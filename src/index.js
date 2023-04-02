@@ -70,8 +70,35 @@ if (signout_btn != null) {
 }
 
 let account = document.getElementById("my_account");
+let logo = document.getElementById("logo");
+let men = document.getElementById("men_link");
+let women = document.getElementById("women_link");
+let cart = document.getElementById("cart_icon");
+
 
 account.addEventListener("click", () => {
   location.href = "./myAccount.html";
 })
+
+logo.addEventListener("click", () => {
+  location.href = "./index.html";
+})
+
+men.addEventListener("click", () => {
+  location.href = "./productsPage.html";
+})
+
+women.addEventListener("click", () => {
+  location.href = "./women.html";
+})
+
+cart.addEventListener("click", () => {
+  location.href = "./cart.html";
+})
+
+
+
+
+
+
 

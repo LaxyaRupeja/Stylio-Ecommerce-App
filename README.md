@@ -5,7 +5,7 @@
 * Laxya Rupeja (Team Lead) - fw25-_261
 * Monisha Verma - fw25_072
 * Samay Subodh Dhawale - fw25_237
-* Sushant Suresh Narvekar - fw23_0275 -
+* Sushant Suresh Narvekar - fw23_0275
 * Aniket Bharatsingh Yadav - fw22_0534
 ## Tech Stack
 * HTML

@@ -12,6 +12,9 @@ nav{
     height: 10vh;
     align-items: center;
      box-shadow: 0px 0px 5px #9a9a9a;
+     
+  
+     color: rgb(17, 17, 17);
 
 }
 #nav_div1{
@@ -25,6 +28,7 @@ nav{
     width: 100%;
     height: 100%;
      border-radius: 8px;
+     
      
 }
 #nav_div2{
@@ -71,7 +75,7 @@ nav{
 #aniket_dashboard{
     display: flex;
     width: 95%;
-    height: 80vh;
+    height: 130vh;
     margin: auto;
     /* background-color: aqua; */
     /* border: 1px solid black; */
@@ -85,22 +89,22 @@ a{
     width: 30%;
     /* border: 1px solid red; */
     border-radius: 10px 0px 0px 10px;
-    background-color: rgb(49, 23, 35);
+    background-color:#2f4254;
 }
 .crud{
     display: flex;
     align-items: center;
     /* border: 1px solid purple; */
   
-    margin-top: 4%;
+    margin-top: 9%;
     height: 7vh;
     padding: 2%;
     border-radius: 10px 0px 0px 10px;
     color: #FFFFFF;
 }
 .crud>div{
-    width: 20%;
-    height: 100%;
+    width: 15%;
+    height: 80%;
     margin-right: 3%;
    
 }
@@ -136,7 +140,7 @@ a{
     height: 8vh;
     border-radius: 8px;
     box-shadow: 0px 0px 5px #9a9a9a;
-    background-color: rgb(49, 23, 35);
+    background-color:  #2f4254;
     color: #FFFFFF;
     margin: 1% 0% 1% 0%;
     padding-top:1% ;
@@ -149,13 +153,14 @@ a{
 }
 
 #aniket_product{
-    border: 2px solid rgb(49, 23, 35);
+    border: 2px solid #2f4254;
     border-radius: 0px 10px 10px 0px;
  
    
 }
 #aniket_product>div:nth-child(2){
-   height: 67vh;
+   height: 90%;
+   /* border: 1px solid green; */
     
 }
 #product{
@@ -164,37 +169,41 @@ a{
 .Allproduct{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+    gap: 25px;
     margin-left: 2%;
-    height: 30vh;
+    height: 100%;
+    /* border: 2px solid red; */
 }
 .Allproduct>div{
     width: 90%;
-    height: 30vh;
+    height: 100%;
     /* border: 1px solid blue; */
+    margin-top: 7%;
     text-align: center;
 }
 .Allproduct>div>img{
     width: 100%;
-    height: 70%;
+    height: 90%;
+   
     border-radius: 3px 3px 0px 0px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
-.Allproduct>div>img:hover{
-    transform: scale(1.1);
+.Allproduct>div>h5{
+    font-size: medium;
 }
+
 #product{
     /* border: 1px solid rgb(219, 205, 205); */
     height: 50vh;
 }
 
 #pagination{
-    /* border: 1px solid red; */
-    margin-top: 20%;
+    /* border: 1px solid rgb(35, 31, 31); */
+   
   
     margin: auto;
     padding-left: 30%;
-    padding-top: 7%;
+    padding-top: 40%;
     height: 5vh;
 }
 
@@ -203,6 +212,6 @@ a{
     margin-left: 1%;
     height: 100%;
     border-radius: 4px;
-    background-color: rgb(49, 23, 35);
+    background-color:#2f4254;
     color: #FFFFFF;
 }

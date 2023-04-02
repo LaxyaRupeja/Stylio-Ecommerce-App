@@ -111,6 +111,20 @@ function allbutton(i){
       return div;
    }
 
+// fetch order
+let Totalorder=document.querySelector(".data-3")
+fetch(`https://stylio.onrender.com/orders`)
+.then((res)=>{
+    return res.json();
+}).then((data)=>{
+    // console.log(data);
+    // console.log(data.length);
+    Totalorder.innerText=data.length;
+    console.lo
+
+}).catch((err)=>{
+    console.log(err);
+})
 
 
 

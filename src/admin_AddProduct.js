@@ -121,6 +121,7 @@ function allbutton(i){
 
       let Name=document.createElement("h5");
       Name.innerText=title;
+      Name.style.color="#b19975"
 
       let Price=document.createElement("p");
       Price.innerText=`₹ ${price}`;

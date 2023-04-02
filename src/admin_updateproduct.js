@@ -122,11 +122,12 @@ function allbutton(i){
 
       let Name=document.createElement("h3");
       Name.innerText=title;
+      Name.style.color="#b19975";
       
 
       let Brand=document.createElement("p");
       Brand.innerText=brand;
-      Brand.style.color="#b19975";
+      Brand.style.color="#2f4254";
   
 
       let aid=document.createElement("p");
@@ -141,7 +142,6 @@ function allbutton(i){
 
       let Discount=document.createElement("p");
       Discount.innerText=`Discount :- ${discount}%`;
-      Discount.style.color="#b19975";
 
       let Price=document.createElement("p");
       Price.innerText=`Price:-₹ ${price}`;
@@ -154,7 +154,8 @@ function allbutton(i){
 
       let Edit=document.createElement("button");
       Edit.innerText="Edit";
-      Edit.style.backgroundColor="#b19975"
+      Edit.style.backgroundColor="#2f4254"
+      Edit.style.color="white";
        Edit.addEventListener("click",()=>{
         addform.style.display="grid";
         product.style.display="none";

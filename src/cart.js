@@ -22,113 +22,115 @@ flycontainer.addEventListener("mouseleave", hideNavContainer);
 
 
 // mid section 
-var finalcart = JSON.parse(localStorage.getItem("Allcartproduct"))||[];
+var finalcart = JSON.parse(localStorage.getItem("Allcartproduct")) || [];
 
 let totalProduct = document.getElementById("total-product");
-totalProduct.innerText=finalcart.length;
+totalProduct.innerText = finalcart.length;
 
- displayData(finalcart);
+displayData(finalcart);
 
- var afterDiscount;
+var afterDiscount;
 //  var quantityEle;
- function displayData(data){
-    let product_left_container = document.querySelector(".product_left_container");
-    product_left_container.innerHTML="";
+function displayData(data) {
+  let product_left_container = document.querySelector(".product_left_container");
+  product_left_container.innerHTML = "";
 
-    data.forEach(function(element){
-        let detail_left = document.createElement("div");
+  data.forEach(function (element) {
+    let detail_left = document.createElement("div");
 
-        let imgDetail = document.createElement("div");
-        imgDetail.setAttribute("id","imgDetails");
+    let imgDetail = document.createElement("div");
+    imgDetail.setAttribute("id", "imgDetails");
 
-        let otherDetails = document.createElement("div");
-        otherDetails.setAttribute("id","otherDetails");
+    let otherDetails = document.createElement("div");
+    otherDetails.setAttribute("id", "otherDetails");
 
-        let imgEle = document.createElement("img");
-        imgEle.setAttribute("src",element.img);
+    let imgEle = document.createElement("img");
+    imgEle.setAttribute("src", element.img);
 
-        let discountPrice = (Number(element.price)*Number(element.discount))/100
-        afterDiscount = (element.price-discountPrice);
-        let priceEle = document.createElement("h3");
-        priceEle.textContent = "Rs." + " " + afterDiscount;
+    let discountPrice = (Number(element.price) * Number(element.discount)) / 100
+    afterDiscount = (element.price - discountPrice);
+    let priceEle = document.createElement("h3");
+    priceEle.textContent = "Rs." + " " + afterDiscount;
 
-        let titleEle = document.createElement("h4");
-        titleEle.textContent = element.title;
+    let titleEle = document.createElement("h4");
+    titleEle.textContent = element.title;
 
-        let label3 = document.createElement('label');
-        label3.setAttribute('class' ,'label3Class')
-        label3.textContent="Savings : ";
-        let savingEle = document.createElement("h4");
-        savingEle.setAttribute("id","saving");
-        savingEle.innerText = "Rs." + " " + discountPrice;
+    let label3 = document.createElement('label');
+    label3.setAttribute('class', 'label3Class')
+    label3.textContent = "Savings : ";
+    let savingEle = document.createElement("h4");
+    savingEle.setAttribute("id", "saving");
+    savingEle.innerText = "Rs." + " " + discountPrice;
 
-        let breakEle = document.createElement("br");
+    let breakEle = document.createElement("br");
 
-        let label1 = document.createElement('label');
-        label1.setAttribute('class' ,'label1Class')
-        label1.textContent="Size : "
-        let selectSize = document.createElement("select");
-        selectSize.setAttribute=("id","selectSize");
-        selectSize.innerHTML=`<option>XS</option><option>S</option select><option>M</option><option>L</option><option>XL</option><option>XXL</option>`
+    let label1 = document.createElement('label');
+    label1.setAttribute('class', 'label1Class')
+    label1.textContent = "Size : "
+    let selectSize = document.createElement("select");
+    selectSize.setAttribute = ("id", "selectSize");
+    selectSize.innerHTML = `<option>XS</option><option>S</option select><option>M</option><option>L</option><option>XL</option><option>XXL</option>`
 
-        let breakEle1 = document.createElement("br");
+    let breakEle1 = document.createElement("br");
 
-        let label2 = document.createElement('label');
-        label2.setAttribute('class' ,'label2Class')
-        label2.textContent="Qty : "
-        var quantityEle = document.createElement("span");
-        quantityEle.innerText=Number(element.quantity);
+    let label2 = document.createElement('label');
+    label2.setAttribute('class', 'label2Class')
+    label2.textContent = "Qty : "
+    var quantityEle = document.createElement("span");
+    quantityEle.innerText = Number(element.quantity);
 
-        let increaseEle = document.createElement("button");
-        increaseEle.innerText="+";
-        increaseEle.setAttribute("id","increaseBtn")
-        increaseEle.addEventListener("click",()=>{
-            element = element.quantity++;
-            localStorage.setItem("Allcartproduct",JSON.stringify(finalcart));
-            displayData(finalcart);
-        });
+    let increaseEle = document.createElement("button");
+    increaseEle.innerText = "+";
+    increaseEle.setAttribute("id", "increaseBtn")
+    increaseEle.addEventListener("click", () => {
+      element = element.quantity++;
+      localStorage.setItem("Allcartproduct", JSON.stringify(finalcart));
+      displayData(finalcart);
+      location.reload();
+    });
 
-        let decreaseEle = document.createElement("button");
-        decreaseEle.innerText="-";
-        decreaseEle.setAttribute("id","decreaseBtn")
-        decreaseEle.addEventListener("click",()=>{
-            if(element.quantity>1){
-                element = element.quantity--;
-                localStorage.setItem("Allcartproduct",JSON.stringify(finalcart));
-                displayData(finalcart);
-            }
-        });
-        
-        let removeEle = document.createElement("button");
-        removeEle.setAttribute("id","deleteBtn");
-        removeEle.innerText="Delete";
-        removeEle.addEventListener("click",()=>{
-            finalcart = finalcart.filter(function(ele){
-              return ele.id !== element.id;
-            })
-            localStorage.setItem("Allcartproduct",JSON.stringify(finalcart));
-            displayData(finalcart);
-        });
-        
-     
-        imgDetail.append(imgEle);
-        otherDetails.append(titleEle,priceEle,label3,savingEle,breakEle,label1,selectSize,breakEle1,label2,decreaseEle,quantityEle,increaseEle,removeEle);
+    let decreaseEle = document.createElement("button");
+    decreaseEle.innerText = "-";
+    decreaseEle.setAttribute("id", "decreaseBtn")
+    decreaseEle.addEventListener("click", () => {
+      if (element.quantity > 1) {
+        element = element.quantity--;
+        localStorage.setItem("Allcartproduct", JSON.stringify(finalcart));
+        displayData(finalcart);
+      }
+      location.reload();
+    });
+
+    let removeEle = document.createElement("button");
+    removeEle.setAttribute("id", "deleteBtn");
+    removeEle.innerText = "Delete";
+    removeEle.addEventListener("click", () => {
+      finalcart = finalcart.filter(function (ele) {
+        return ele.id !== element.id;
+      })
+      localStorage.setItem("Allcartproduct", JSON.stringify(finalcart));
+      displayData(finalcart);
+    });
 
 
-
-        detail_left.append(imgDetail,otherDetails);
-        product_left_container.append(detail_left);
-    })
- }
+    imgDetail.append(imgEle);
+    otherDetails.append(titleEle, priceEle, label3, savingEle, breakEle, label1, selectSize, breakEle1, label2, decreaseEle, quantityEle, increaseEle, removeEle);
 
 
 
-var finalprice = finalcart.reduce(function(acc, cv) {
-    // var x = Number(cv.price);
-    let discountPrice = (Number(cv.price)*Number(cv.discount))/100
-    let afterDiscount = (cv.price-discountPrice);
-    var x = Number(afterDiscount)*Number(cv.quantity);
-    return acc+x;
+    detail_left.append(imgDetail, otherDetails);
+    product_left_container.append(detail_left);
+  })
+}
+
+
+
+var finalprice = finalcart.reduce(function (acc, cv) {
+  // var x = Number(cv.price);
+  let discountPrice = (Number(cv.price) * Number(cv.discount)) / 100
+  let afterDiscount = (cv.price - discountPrice);
+  var x = Number(afterDiscount) * Number(cv.quantity);
+  return acc + x;
 }, 0);
 
 

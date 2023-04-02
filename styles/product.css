@@ -131,18 +131,18 @@ h3{
 }
 #subnavbar > div:nth-child(2) > div:nth-child(2) {
     position: absolute;
-    right: 21.8%;
+    right: 16.8%;
     top: 46px;
     color:#2F4254;
 }
 #subnavbar > div:nth-child(2) > div:nth-child(1) > input {
     border-radius: 20px;
     width:280px;
-    height:30px;
+    height:33px;
     padding-left: 10px;
     border: 1px solid #333;
     background-color: #FFFDED;
-}
+}   
 #height {
     height:600px;
     margin-top: 85px;

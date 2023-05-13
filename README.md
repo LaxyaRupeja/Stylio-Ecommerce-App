@@ -6,7 +6,6 @@
 * HTML
 * TailwindCSS
 * Javascript
-* Render.com
 * SweetAlert
 * Swiper.js
 * Font-Awesome

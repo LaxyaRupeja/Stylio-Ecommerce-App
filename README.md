@@ -9,15 +9,12 @@
 * Aniket Bharatsingh Yadav - fw22_0534
 ## Tech Stack
 * HTML
-* TailwindCSS
+* CSS
 * Javascript
 * SweetAlert
 * Swiper.js
 * Font-Awesome
-* Mongodb
-* Mongoose
-* NodeJS
-* expressJS
+* Render.com
 ## Features
 * Login/SignUp
 * Add Product To Cart

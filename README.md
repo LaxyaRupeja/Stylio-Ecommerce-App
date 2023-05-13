@@ -4,21 +4,25 @@
 ## Individual Project built within the span of 5 Days
 ## Tech Stack
 * HTML
-* CSS
+* TailwindCSS
 * Javascript
-* JSON-Server
 * Render.com
 * SweetAlert
 * Swiper.js
 * Font-Awesome
+* Mongodb
+* Mongoose
+* NodeJS
+* expressJS
 ## Features
 * Login/SignUp
 * Add Product To Cart
 * Individual Product Page
 * Order History
 * User-friendly interface
-* Filters and search options
-* Admin Dashboard
-* Create/Update/Delete Product (Admin)
+* Filters by Price and Category
+* Payment Page
+* Authorization
+* Encryption
 ## Deployed Link
 https://poetic-salmiakki-461e65.netlify.app

@@ -1,7 +1,12 @@
-# [Craftverse](https://poetic-salmiakki-461e65.netlify.app/) (Craftvilla.com Clone)
+# [Stylio.com](https://stylio.netlify.app/) (Ajio.com Clone)
 ## Project Description
-**Craftverse is a clone of craftvilla.com which is an ecommerce website with wide variety of product like home-decor and some fashion product also with seemless user experience**
-## Individual Project built within the span of 5 Days
+**Stylio.com is an e-commerce clothing website inspired by Ajio.com, designed to provide an easy and seamless shopping experience for users looking to purchase fashionable clothing items. The website offers a wide range of clothing options for men, women, and children, with an intuitive interface, easy payment options, and mobile optimization. The goal is to provide a stress-free and enjoyable shopping experience for customers.**
+## Team Member
+* Laxya Rupeja (Team Lead) - fw25-_261
+* Monisha Verma - fw25_072
+* Samay Subodh Dhawale - fw25_237
+* Sushant Suresh Narvekar - fw23_0275
+* Aniket Bharatsingh Yadav - fw22_0534
 ## Tech Stack
 * HTML
 * TailwindCSS
@@ -24,4 +29,4 @@
 * Authorization
 * Encryption
 ## Deployed Link
-https://poetic-salmiakki-461e65.netlify.app
+https://stylio.netlify.app/
